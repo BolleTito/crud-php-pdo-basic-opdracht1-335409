@@ -18,7 +18,12 @@ $sql = "INSERT INTO Persoon (Id
                             ,Voornaam
                             ,Tussenvoegsel
                             ,Achternaam
-                            ,Telefoonnummer)
+                            ,Telefoonnummer
+                            ,Straatnaam
+                            ,Huisnummer
+                            ,Woonplaats
+                            ,Postcode
+                            ,Landnaam)
         VALUES              (NULL
                             ,:firstname
                             ,:infix
