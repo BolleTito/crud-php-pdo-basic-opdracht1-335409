@@ -82,7 +82,11 @@ foreach($result as $info) {
         <th>Tussenvoegsel</th>
         <th>Achternaam</th>
         <th>Telefoonnummer</th>
-        <th></th>
+        <th>Straatnaam</th>
+        <th>Huisnummer</th>
+        <th>Woonplaats</th>
+        <th>Postcode</th>
+        <th>Landnaam</th>
     </thead>
     <tbody>
         <?php echo $tableRows; ?>
