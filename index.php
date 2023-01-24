@@ -24,6 +24,21 @@
         <label for="phonenumber">Telefoonnummer:</label><br>
         <input type="text" name="phonenumber" id="phonenumber"><br>
 
+        <label for="streetname">Straatnaam:</label><br>
+        <input type="text" name="streetname" id="streetname"><br>
+
+        <label for="housenumber">Huisnummer:</label><br>
+        <input type="text" name="housenumber" id="housenumber"><br>
+
+        <label for="residence">Woonplaats:</label><br>
+        <input type="text" name="residence" id="residence"><br>
+
+        <label for="postalcode">Postcode:</label><br>
+        <input type="text" name="postalcode" id="postalcode"><br>
+
+        <label for="country">Landnaam:</label><br>
+        <input type="text" name="country" id="country"><br>
+
         <input type="submit" value="Verstuur">
     </form>
 </body>
