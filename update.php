@@ -30,7 +30,6 @@ $statement->execute();
 
 $result = $statement->fetch(PDO::FETCH_OBJ);
 
-var_dump($result);
 
 
 
