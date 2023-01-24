@@ -26,6 +26,11 @@ $sql = "SELECT Id
               ,Tussenvoegsel
               ,Achternaam
               ,Telefoonnummer
+              ,Straatnaam
+              ,Huisnummer
+              ,Woonplaats
+              ,Postcode
+              ,Landnaam
         FROM Persoon";
 
 //Bereid de de query voor met de method prepare
