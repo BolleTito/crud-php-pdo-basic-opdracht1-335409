@@ -59,8 +59,23 @@ var_dump($result);
         <label for="lastname">Achternaam:</label><br>
         <input type="text" name="lastname" id="lastname" value="<?php echo $result->Achternaam; ?>"><br>
 
-        <label for="phonenumber">Telefoonnummer:</label><br><br>
+        <label for="phonenumber">Telefoonnummer:</label><br>
         <input type="text" name="phonenumber" id="phonenumber" value="<?php echo $result->Telefoonnummer; ?>"><br>
+
+        <label for="streetname">Straatnaam:</label><br>
+        <input type="text" name="streetname" id="streetname" value="<?php echo $result->Straatnaam; ?>"><br>
+
+        <label for="housenumber">Huisnummer:</label><br>
+        <input type="text" name="housenumber" id="housenumber" value="<?php echo $result->Huisnummer; ?>"><br>
+
+        <label for="residence">Woonplaats:</label><br>
+        <input type="text" name="residence" id="residence" value="<?php echo $result->Woonplaats; ?>"><br>
+
+        <label for="postalcode">Postcode:</label><br>
+        <input type="text" name="postalcode" id="postalcode" value="<?php echo $result->Postcode; ?>"><br>
+
+        <label for="country">Landnaam:</label><br>
+        <input type="text" name="country" id="country" value="<?php echo $result->Landnaam; ?>"><br>
 
         <input type="submit" value="Verstuur">
     </form>
