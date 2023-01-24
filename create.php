@@ -40,6 +40,11 @@ $statement->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
 $statement->bindValue(':infix', $_POST['infix'], PDO::PARAM_STR);
 $statement->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
 $statement->bindValue(':phonenumber', $_POST['phonenumber'], PDO::PARAM_STR);
+$statement->bindValue(':streetname', $_POST['streetname'], PDO::PARAM_STR);
+$statement->bindValue(':housenumber', $_POST['housenumber'], PDO::PARAM_STR);
+$statement->bindValue(':residence', $_POST['residence'], PDO::PARAM_STR);
+$statement->bindValue(':postalcode', $_POST['postalcode'], PDO::PARAM_STR);
+$statement->bindValue(':country', $_POST['country'], PDO::PARAM_STR);
 // Vuur de query af op de database...
 $statement->execute();
 
