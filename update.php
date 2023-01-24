@@ -59,7 +59,7 @@ var_dump($result);
         <label for="lastname">Achternaam:</label><br>
         <input type="text" name="lastname" id="lastname" value="<?php echo $result->Achternaam; ?>"><br>
 
-        <label for="phonenumber">Telefoonnummer:</label><br>
+        <label for="phonenumber">Telefoonnummer:</label><br><br>
         <input type="text" name="phonenumber" id="phonenumber" value="<?php echo $result->Telefoonnummer; ?>"><br>
 
         <input type="submit" value="Verstuur">
