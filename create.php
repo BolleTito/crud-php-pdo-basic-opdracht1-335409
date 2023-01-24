@@ -28,7 +28,12 @@ $sql = "INSERT INTO Persoon (Id
                             ,:firstname
                             ,:infix
                             ,:lastname
-                            ,:phonenumber);";
+                            ,:phonenumber
+                            ,:streetname
+                            ,:housenumber
+                            ,:residence
+                            ,:postalcode
+                            ,:country);";
 // Maak de query gereed met de prepare-method van het $pdo-object
 $statement = $pdo->prepare($sql);
 $statement->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
