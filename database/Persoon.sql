@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 26 jan 2023 om 10:49
+-- Gegenereerd op: 29 jan 2023 om 21:18
 -- Serverversie: 5.7.36
 -- PHP-versie: 8.1.0
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `Persoon`;
 CREATE TABLE IF NOT EXISTS `Persoon` (
-  `Id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `Id` int(6) NOT NULL AUTO_INCREMENT,
   `Voornaam` varchar(60) NOT NULL,
   `Tussenvoegsel` varchar(10) DEFAULT NULL,
   `Achternaam` varchar(60) NOT NULL,
@@ -40,17 +40,15 @@ CREATE TABLE IF NOT EXISTS `Persoon` (
   `Postcode` varchar(10) NOT NULL,
   `Landnaam` varchar(255) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `Persoon`
 --
 
 INSERT INTO `Persoon` (`Id`, `Voornaam`, `Tussenvoegsel`, `Achternaam`, `Telefoonnummer`, `Straatnaam`, `Huisnummer`, `Woonplaats`, `Postcode`, `Landnaam`) VALUES
-(22, 'Che', 'de', 'de Kraker', '0635507878', 'Vlinderlaan', '213', 'Vleuten', '1234wh', 'Nederland'),
-(23, 'Che', 'de', 'de Kraker', '0635507878', 'Vlinderlaan', '213', 'Vleuten', '4282wh', 'Nederland'),
-(24, 'Che', 'de', 'de Kraker', '0698831756', 'Vlinderlaan', '213', 'Vleuten', '4282wh', 'Nederland'),
-(28, 'Che', 'de', 'de Kraker', '0635507878', 'Vlinderlaan', '213', 'Vleuten', '1234wh', 'Nederland');
+(28, 'Che', 'de', 'de Kraker', '0635507878', 'Vlinderlaan', '213', 'Vleuten', '1234wh', 'Nederland'),
+(34, 'Che', 'de', 'de Kraker', '0635507878', 'Vlinderlaan', '213', 'Vleuten', '1234wh', 'Nederland');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

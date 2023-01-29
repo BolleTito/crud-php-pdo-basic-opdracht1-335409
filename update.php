@@ -17,6 +17,50 @@ try {
     $e->getMessage();
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    try {
+        // Maak een update query voor het updaten van een record
+        $sql = "UPDATE Persoon
+                SET Voornaam = :Voornaam,
+                    Tussenvoegsel = :Tussenvoegsel,
+                    Achternaam = :Achternaam,
+                    Telefoonnummer = :Telefoonnummer,
+                    Straatnaam = :Straatnaam,
+                    Huisnummer = :Huisnummer,
+                    Woonplaats = :Woonplaats,
+                    Postcode = :Postcode,
+                    Landnaam = :Landnaam
+                WHERE Id = :Id";
+
+        // Roep de prepare-method aan van het PDO-object $pdo
+        $statement = $pdo->prepare($sql);
+
+        // We moeten de placeholders een waarde geven in de sql-query
+        $statement->bindValue(':Id', $_POST['Id'], PDO::PARAM_INT);
+        $statement->bindValue(':Voornaam', $_POST['firstname'], PDO::PARAM_STR);
+        $statement->bindValue(':Tussenvoegsel', $_POST['infix'], PDO::PARAM_STR);
+        $statement->bindValue(':Achternaam', $_POST['lastname'], PDO::PARAM_STR);
+        $statement->bindValue(':Telefoonnummer', $_POST['phonenumber'], PDO::PARAM_STR);
+        $statement->bindValue(':Straatnaam', $_POST['streetname'], PDO::PARAM_STR);
+        $statement->bindValue(':Huisnummer', $_POST['housenumber'], PDO::PARAM_STR);
+        $statement->bindValue(':Woonplaats', $_POST['residence'], PDO::PARAM_STR);
+        $statement->bindValue(':Postcode', $_POST['postalcode'], PDO::PARAM_STR);
+        $statement->bindValue(':Landnaam', $_POST['country'], PDO::PARAM_STR);
+
+        // We gaan de query uitvoeren op de mysql-server
+        $statement->execute();
+
+        echo "Het record is geupdate";
+        header("Refresh:3; read.php");
+
+    } catch(PDOException $e) {
+        echo "Het record is niet geupdate";
+        header("Refresh:3; read.php");
+    }
+    exit();
+}
+
 // Maak een select-query
 $sql = "SELECT * FROM Persoon 
         WHERE Id = :Id";
@@ -30,9 +74,7 @@ $statement->execute();
 
 $result = $statement->fetch(PDO::FETCH_OBJ);
 
-
-
-
+// var_dump($result);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +90,7 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
 <body>
     <h1>PDO CRUD</h1>
 
-    <form action="create.php" method="post">
+    <form action="update.php" method="post">
         <label for="firstname">Voornaam:</label><br>
         <input type="text" name="firstname" id="firstname" value="<?php echo $result->Voornaam; ?>"><br>
 
@@ -75,6 +117,8 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
 
         <label for="country">Landnaam:</label><br>
         <input type="text" name="country" id="country" value="<?php echo $result->Landnaam; ?>"><br>
+
+        <input type="hidden" name="Id" value="<?php echo $result->Id; ?>">
 
         <input type="submit" value="Verstuur">
     </form>
